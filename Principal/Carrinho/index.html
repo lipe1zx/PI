@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Carrinho de Compras</title>
+</head>
+<body>
+<header>
+    <a href="index.html"><img src="imagens/Multi__1___1_-removebg-preview.png" alt="Logo" height="75px"></a>
+<div>
+  <h1 class="txtprincipal">Seu Carrinho 🛒:</h1>
+</div>
+</header>
+<div class="espacoheader"></div>
+  <div id="lista-carrinho"></div>
+
+  <script>
+    function renderizarCarrinho() {
+      const lista = document.getElementById('lista-carrinho');
+      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+      lista.innerHTML = '';
+
+      if (carrinho.length === 0) {
+        lista.innerHTML = '<p>Seu carrinho está vazio.</p>';
+        return;
+      }
+
+      carrinho.forEach((item, index) => {
+        const produtoDiv = document.createElement('div');
+        produtoDiv.classList.add('produto');
+
+        produtoDiv.innerHTML = `
+          <img src="../${item.img}" alt="${item.nome}">
+          <div class="produto-info">
+            <h3>${item.nome}</h3>
+            <p>Preço: R$ ${item.preco.toFixed(2)}</p>
+            <p>Quantidade: ${item.quantidade}</p>
+          </div>
+          <button class="remover-btn" data-index="${index}">Remover</button>
+        `;
+
+        lista.appendChild(produtoDiv);
+      });
+
+      document.querySelectorAll('.remover-btn').forEach(botao => {
+        botao.addEventListener('click', () => {
+          const index = botao.dataset.index;
+          removerDoCarrinho(index);
+        });
+      });
+    }
+
+    function removerDoCarrinho(index) {
+      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      carrinho.splice(index, 1); // Remove o item
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      renderizarCarrinho();
+    }
+
+    renderizarCarrinho();
+  </script>
+</body>
+</html>

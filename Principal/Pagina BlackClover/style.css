@@ -1,0 +1,51 @@
+@charset "UTF-8";
+header {
+  background-color: #ff6600;
+  position: fixed;
+  top: 0;
+  width: 2000px;
+
+}
+.espaco-header {
+  height: 595px;
+  /* ajuste conforme o tamanho real do seu header */
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+    font-family: Arial, Helvetica, sans-serif
+}
+footer {
+  background-color: black;
+  color: white;
+}
+.img_footer {
+  height: 50px;
+}
+
+
+.principal_footer {
+  height: 150px;
+}
+.hr_footer {
+  size: 7px;
+  background-color: white;
+  width: 1500px;
+  text-align:center ;
+}
+.ft_redes {
+  margin-left: 180px;
+}
+h2 {
+  color: white;
+}
+.cima_ft {
+display: flex;
+padding-left: 250px;
+
+
+}
+.sla{
+  height: 2500px;
+}

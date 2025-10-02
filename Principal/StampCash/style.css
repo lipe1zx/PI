@@ -1,0 +1,38 @@
+@charset "UTF-8";
+header {
+  background-color: #ff6600;
+  position: fixed;
+  top: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+footer {
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+.img_footer {
+  height: 50px;
+}
+.cash {
+  height: 250px;
+  padding-left: 30px;
+}
+.principal_footer {
+  height: 200px;
+}
+.hr_footer {
+  size: 7px;
+  background-color: white;
+  width: 1500px;
+  text-align:center ;
+}
+.ft_redes {
+  margin-left: 180px;
+}
+.cima_ft {
+margin-left: 180px;
+}
