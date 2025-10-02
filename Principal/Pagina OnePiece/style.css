@@ -129,4 +129,9 @@ transform: scale(1.1) translateY(-8px);
 }
 main{
   padding: 25px;
+
+}
+#geral{
+display: flex;
+gap: 50px;
 }
